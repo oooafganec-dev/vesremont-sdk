@@ -15,21 +15,41 @@ Client libraries are MIT licensed; the store is not released under that license.
 
 | Language | Directory | Package/module |
 | --- | --- | --- |
-| JavaScript / TypeScript + Node CLI | [javascript](javascript/README.md) | `@vesremont_api/api` |
-| Python | [python](python/README.md) | `vesremont-api` |
-| Go | [go](go/README.md) | `github.com/oooafganec-dev/vesremont-sdk/go` |
-| Ruby | [ruby](ruby/README.md) | `vesremont-api` |
+| JavaScript / TypeScript + Node CLI | [javascript](javascript/README.md) | [@vesremont_api/api](https://www.npmjs.com/package/@vesremont_api/api) |
+| Python | [python](python/README.md) | [vesremont-api](https://pypi.org/project/vesremont-api/0.2.0/) |
+| Go | [go](go/README.md) | [github.com/oooafganec-dev/vesremont-sdk/go](https://pkg.go.dev/github.com/oooafganec-dev/vesremont-sdk/go@v0.2.0) |
+| Ruby | [ruby](ruby/README.md) | [vesremont-api](https://rubygems.org/gems/vesremont-api/versions/0.2.0) |
 
-Source version: 0.2.0. Registry publication is not yet confirmed. Use the
-language README for direct-download installation; do not assume a package
-can already be installed by registry name. See [publication status](PUBLISHING.md).
+Release 0.2.0 is published in npm, PyPI and RubyGems. The Go module is
+published under tag `go/v0.2.0` and its public-proxy download is verified.
+Publication checks were completed on 2026-10-05; they do not replace buyer
+OAuth, production API acceptance or a fresh Ora scan.
+Use the language README for installation. See [publication status](PUBLISHING.md).
+
+## Install the published release
+
+Run on an external development computer in an isolated project/environment.
+These commands install libraries and check metadata; they do not call the store API.
+
+| Client | Installation | Offline check |
+| --- | --- | --- |
+| Node SDK + `vesremont` CLI | `npm install @vesremont_api/api@0.2.0` | `npx --no-install vesremont --version` (0.2.0); `npx --no-install vesremont --help` |
+| Python SDK | `python -m pip install vesremont-api==0.2.0` | Import `VesremontClient` from `vesremont_api`; `importlib.metadata.version("vesremont-api")` (0.2.0) |
+| Ruby SDK | `gem install vesremont-api -v 0.2.0 --no-document` | `require "vesremont_api"`; `Gem.loaded_specs.fetch("vesremont-api").version.to_s` (0.2.0) |
+| Go SDK | `go get github.com/oooafganec-dev/vesremont-sdk/go@v0.2.0` inside your Go module | `go list -m github.com/oooafganec-dev/vesremont-sdk/go` (v0.2.0) |
+
+The CLI is already included in the npm package, not a second unpublished package.
+The Go module uses the `go/v0.2.0` subdirectory tag. Existing releases are immutable;
+documentation changes on main do not change already published artifacts.
 
 ## Safe usage
 
 - Public catalog reads need no buyer token. Personal operations require the
   buyer's OAuth consent, correct resource and minimum scopes.
-- This is the production store, not a mock shop or sandbox. Writes may change
+- SDKs default to the production store, not a mock shop. Writes may change
   a real cart or order; reading documentation does not grant permission to write.
+  The separate read-only onboarding example is documented on the developer portal;
+  installing an SDK does not switch requests to that example.
 - Order preparation and explicit confirmation on Vesremont remain mandatory.
 - Never put access tokens, customer responses, confirmation tokens or signed
   cart links in issues, commits or public logs.
@@ -52,3 +72,8 @@ consent. Node requires 22+, Python 3.10+, Go 1.22+, Ruby 3.3+.
 
 Remote MCP endpoint: `https://vesremont.com/mcp`. It is operated by Vesremont;
 this SDK repository is not the implementation of that MCP server.
+
+[Smithery listing](https://smithery.ai/servers/oooafganec/Vesremont).
+The public card links back to the developer portal, which links to that card.
+Successful public tool discovery does not grant access to a buyer's private data.
+Directory verification badges and Ora recognition are separate from publication.
