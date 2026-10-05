@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vesremont-api"
+version = "0.2.0"
+description = "Small standard-library client for the Vesremont public API"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+keywords = ["vesremont", "api", "sdk", "oauth", "pkce"]
+classifiers = ["Programming Language :: Python :: 3", "Operating System :: OS Independent"]
+
+[project.urls]
+Documentation = "https://vesremont.com/for_ai/api_ai/"
+Homepage = "https://vesremont.com/developers/"
+Source = "https://github.com/oooafganec-dev/vesremont-sdk/tree/main/python"
+Issues = "https://github.com/oooafganec-dev/vesremont-sdk/issues"
+
+[tool.setuptools]
+py-modules = ["vesremont_api"]

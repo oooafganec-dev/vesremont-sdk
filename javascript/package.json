@@ -1,0 +1,17 @@
+{
+  "name": "@vesremont_api/api",
+  "version": "0.2.0",
+  "description": "Small Node.js/TypeScript client and CLI for the Vesremont public API",
+  "type": "module",
+  "exports": { ".": { "types": "./index.d.ts", "import": "./index.js" } },
+  "types": "./index.d.ts",
+  "bin": { "vesremont": "./cli.js" },
+  "engines": { "node": ">=22" },
+  "files": ["index.js", "index.d.ts", "cli.js", "login.js", "README.md", "LICENSE"],
+  "homepage": "https://vesremont.com/developers/",
+  "repository": { "type": "git", "url": "git+https://github.com/oooafganec-dev/vesremont-sdk.git", "directory": "javascript" },
+  "bugs": { "url": "https://github.com/oooafganec-dev/vesremont-sdk/issues" },
+  "license": "MIT",
+  "keywords": ["vesremont", "api", "sdk", "cli", "oauth", "pkce"],
+  "publishConfig": { "access": "public" }
+}
