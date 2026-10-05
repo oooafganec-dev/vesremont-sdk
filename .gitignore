@@ -1,0 +1,21 @@
+# Use as .gitignore in the public SDK-only repository.
+node_modules/
+dist/
+build/
+.build/
+*.tgz
+*.whl
+*.gem
+*.tar.gz
+*.egg-info/
+__pycache__/
+*.py[cod]
+go-cache/
+.env
+.env.*
+.npmrc
+.pypirc
+*.pem
+*.key
+.DS_Store
+Thumbs.db
