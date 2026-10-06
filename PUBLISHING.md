@@ -9,6 +9,12 @@ active; skills.sh catalogue indexing remains unconfirmed.
 See [current registry evidence](registry/README.md) and
 [configurations/skills follow-up](PUBLIC_DISCOVERY.md).
 
+Native client configurations and publication corrections were subsequently
+published in `6e91e2098fb43920785759bcf33bb8feee83b9fb`; all 17 delivery files
+were verified by exact public raw-file hashes. This does not publish a new SDK
+release or establish skills.sh adoption. A post-publication skills install was
+interrupted by a GitHub connection reset and is not claimed as a passed test.
+
 Updated 2026-10-06. Public SDK-only source repository:
 https://github.com/oooafganec-dev/vesremont-sdk.
 The owner published all four SDK releases. The registry and public Go-proxy

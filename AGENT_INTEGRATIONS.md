@@ -93,13 +93,16 @@ were also run on 2026-10-06. The earlier local-copy installation preserved
 exact source bytes. The fresh remote Windows installation preserved the text
 but Git converted LF to CRLF. This follow-up's `.gitattributes` fixes that
 checkout behavior for SKILL.md; its controlled Git checkout test preserves
-exact hashes. Recheck the remote installation after publishing that file.
+exact hashes. The post-publication remote-install attempt failed during Git
+clone with a connection reset; recheck when the network is stable, not by
+claiming that failed attempt passed. Test telemetry remains disabled.
 
 Public GitHub baseline at inspection:
 `d396ba0ddbf8455ed932ecb8cf680d6edfd11be4` (main, 2026-10-06T16:21:43Z).
 That commit already publishes the plugin, three skills and four config examples.
-The follow-up adds [native client paths and Cascade configuration](connections/README.md)
-and corrects stale publication instructions. Its upload is a separate step:
-verify the new public commit and file bytes before claiming these additions
-are discoverable. Published Go tag `go/v0.2.0` is not moved.
+The follow-up [native client paths and Cascade configuration](connections/README.md)
+and publication corrections are now published in
+`6e91e2098fb43920785759bcf33bb8feee83b9fb`. Public raw-file verification passed
+for all 17 delivery files, including dot-prefixed paths. Catalogue indexing and
+Ora acceptance are still separate checks. Published Go tag `go/v0.2.0` is not moved.
 The official Registry is active; see [registry evidence](registry/README.md).
