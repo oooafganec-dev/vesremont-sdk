@@ -11,29 +11,33 @@ are part of this delivery.
 | --- | --- | --- |
 | Official Registry | `com.vesremont/store@1.0.0` active; exact endpoint and brand search pass | Ora still reports registry 0/1; no republish needed |
 | Smithery | Existing card, direct upstream, public domain and backlink proof | Paid Verified badge is separate; no purchase or artificial usage |
-| Configurations | Native Claude/Cursor files, Cascade rule/example and README links published in `6e91e20`; all 17 delivery files verified via public raw URLs | Actual client trust and buyer OAuth are separate checks |
-| Skills | Three remote GitHub skills discovered/installed; raw GitHub/canonical SHA-256 match | Three skills.sh pages unavailable; no confirmed catalogue listing or adoption |
+| Configurations | Native Claude/Cursor files, Cascade rule/example and README links verified at `41ba23f`; public SDK `AGENTS.md` and individual skill links added in this follow-up | Actual client trust and buyer OAuth are separate checks |
+| Skills | Remote installation with Node 22.20.0 / CLI 1.7.0 passed; all three installed SHA-256 match canonical bytes | Three skills.sh pages unavailable; no confirmed catalogue listing or adoption |
 | Instructions | Stale "not published" statements corrected and published | Fresh Ora acceptance remains external |
 
-The inspected main commit is
-**`d396ba0ddbf8455ed932ecb8cf680d6edfd11be4`**, dated
-**2026-10-06T16:21:43Z**. It already includes `plugin.json`, `mcp.json`,
-three skill snapshots and four configuration examples. Native-path additions
-are not asserted to be in that older commit.
+The main commit inspected before this follow-up is
+**`41ba23fded38428191301ea7ca94589c3eb59287`**. Public raw-file reads confirmed
+the existing native configurations, README links and all three skill digests.
+Ora's cached scan **2026-10-06T17:50:29.842Z** remains 95/100 and reports
+registry/configs/skills discovery failures. This is a cached result, not a new
+scan initiated by this check.
 
 The follow-up was published by the authenticated owner with an ordinary
 fast-forward Git push: **`6e91e2098fb43920785759bcf33bb8feee83b9fb`**.
 All 17 files, including dot-prefixed paths, were read back from public GitHub
 at that commit and their SHA-256 matched the reviewed delivery bytes.
 
-The Windows remote-install test passed after one network retry. That checkout
-converted LF to CRLF; installed content matched after newline normalization,
-but raw installed hashes differed. This follow-up adds `.gitattributes` with
-`skills/**/SKILL.md text eol=lf`, without changing SKILL.md bytes. A controlled
-Git checkout with `core.autocrlf=true` verifies exact hash preservation. Remote
-byte preservation by the CLI still needs a successful new remote install:
-the post-publication attempt failed during Git clone with a connection reset.
-Do not present that failed attempt or the older checkout as byte-identical.
+The earlier Windows checkout converted LF to CRLF. The published `.gitattributes`
+now preserves skill bytes. A fresh remote installation from `41ba23f` completed
+on 2026-10-06 using Node **22.20.0**, skills CLI **1.7.0**, project scope and
+copy mode. All three installed SKILL.md digests match `skills/sources.json`
+and the live canonical sources exactly, without newline normalization.
+`DISABLE_TELEMETRY=1` and `DO_NOT_TRACK=1` were set. This one isolated test
+does not count as adoption or prove skills.sh indexing.
+
+The public `AGENTS.md` in this follow-up is written for SDK contributors:
+repository layout, relevant offline checks, connection choices and canonical
+skill links. It contains no internal shop instructions or production settings.
 
 ## URLs for the site/documentation owner
 
@@ -45,14 +49,20 @@ Already confirmed public:
 - [Integration guide](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/AGENT_INTEGRATIONS.md)
 - [Connection guide](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/connections/README.md)
 - [Three skill sources](https://github.com/oooafganec-dev/vesremont-sdk/tree/main/skills)
+- [Product discovery skill](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/skills/vesremont-product-discovery/SKILL.md)
+- [Session shopping skill](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/skills/vesremont-session-shopping/SKILL.md)
+- [Buyer guidance skill](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/skills/vesremont-buyer-guidance/SKILL.md)
+
+Public SDK instructions added by this follow-up:
+[AGENTS.md](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/AGENTS.md).
 
 Published native paths, publicly verified at `6e91e20`:
 
-- https://github.com/oooafganec-dev/vesremont-sdk/blob/main/.mcp.json
-- https://github.com/oooafganec-dev/vesremont-sdk/blob/main/.cursor/mcp.json
-- https://github.com/oooafganec-dev/vesremont-sdk/blob/main/.claude/rules/vesremont-sdk.md
-- https://github.com/oooafganec-dev/vesremont-sdk/blob/main/.windsurf/rules/vesremont-sdk.md
-- https://github.com/oooafganec-dev/vesremont-sdk/blob/main/connections/windsurf.mcp_config.json
+- [Claude Code MCP configuration](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/.mcp.json)
+- [Cursor MCP configuration](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/.cursor/mcp.json)
+- [Claude Code SDK rules](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/.claude/rules/vesremont-sdk.md)
+- [Windsurf SDK rules](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/.windsurf/rules/vesremont-sdk.md)
+- [Windsurf/Cascade MCP configuration](https://github.com/oooafganec-dev/vesremont-sdk/blob/main/connections/windsurf.mcp_config.json)
 
 Claude Code reads `.mcp.json`; its `.claude/` rule is scoped to SDK files.
 Cursor reads `.cursor/mcp.json`. Cascade's user-level MCP file is not a

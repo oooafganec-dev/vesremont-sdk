@@ -12,8 +12,10 @@ See [current registry evidence](registry/README.md) and
 Native client configurations and publication corrections were subsequently
 published in `6e91e2098fb43920785759bcf33bb8feee83b9fb`; all 17 delivery files
 were verified by exact public raw-file hashes. This does not publish a new SDK
-release or establish skills.sh adoption. A post-publication skills install was
-interrupted by a GitHub connection reset and is not claimed as a passed test.
+release or establish skills.sh adoption. The interrupted remote-install check
+was completed on 2026-10-06 against main `41ba23f` with Node 22.20.0 and skills
+CLI 1.7.0: all three installed SKILL.md files match their canonical SHA-256
+without newline normalization. Test telemetry was disabled.
 
 Updated 2026-10-06. Public SDK-only source repository:
 https://github.com/oooafganec-dev/vesremont-sdk.
@@ -95,7 +97,7 @@ prove publication in another directory or a successful buyer OAuth test.
 
 Official Registry publication was confirmed on 2026-10-06: active, latest,
 endpoint and website match, search for `vesremont` returns the record.
-The cached Ora scan at 2026-10-06T16:55:46Z is 95/100 and still reports
+The cached Ora scan at 2026-10-06T17:50:29.842Z is 95/100 and still reports
 registry 0/1 and skills.sh not listed. Publication, installation and external
 detector acceptance are separate outcomes. No automatic republishing or
 usage-generating tool calls are necessary.

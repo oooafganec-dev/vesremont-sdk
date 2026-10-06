@@ -25,6 +25,7 @@ read current prices, availability and canonical policy pages before answering.
 
 ## Install skills through the official CLI
 
+Use Node **22.20.0 or newer**, as required by `skills@1.7.0`.
 The three skills are published in the public repository and the official CLI
 discovers all three. List them without installing:
 
@@ -93,9 +94,12 @@ were also run on 2026-10-06. The earlier local-copy installation preserved
 exact source bytes. The fresh remote Windows installation preserved the text
 but Git converted LF to CRLF. This follow-up's `.gitattributes` fixes that
 checkout behavior for SKILL.md; its controlled Git checkout test preserves
-exact hashes. The post-publication remote-install attempt failed during Git
-clone with a connection reset; recheck when the network is stable, not by
-claiming that failed attempt passed. Test telemetry remains disabled.
+exact hashes. After an earlier GitHub connection reset, the follow-up remote
+installation from public main `41ba23fded38428191301ea7ca94589c3eb59287`
+passed on 2026-10-06 with Node 22.20.0 and skills CLI 1.7.0. All three installed
+SKILL.md SHA-256 digests now match the canonical bytes without normalization.
+The installation used an isolated project and disabled telemetry; it is not
+evidence of directory indexing or adoption.
 
 Public GitHub baseline at inspection:
 `d396ba0ddbf8455ed932ecb8cf680d6edfd11be4` (main, 2026-10-06T16:21:43Z).

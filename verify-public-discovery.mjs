@@ -49,7 +49,7 @@ try {
   const commit = await (await get(`https://api.github.com/repos/${repository}/commits/main`)).json();
   assert.match(commit.sha, /^[a-f0-9]{40}$/);
   console.log(`GITHUB_COMMIT=${commit.sha}`);
-  const files = ['.gitattributes', 'README.md', 'AGENT_INTEGRATIONS.md', 'PUBLISHING.md', 'connections/README.md', 'registry/README.md',
+  const files = ['.gitattributes', 'AGENTS.md', 'README.md', 'PUBLIC_DISCOVERY.md', 'AGENT_INTEGRATIONS.md', 'PUBLISHING.md', 'connections/README.md', 'registry/README.md',
     '.mcp.json', '.cursor/mcp.json', '.claude/rules/vesremont-sdk.md', '.windsurf/rules/vesremont-sdk.md',
     'connections/windsurf.mcp_config.json'];
   for (const path of files) {

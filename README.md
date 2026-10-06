@@ -13,6 +13,7 @@ Client libraries are MIT licensed; the store is not released under that license.
 
 ## Agent integrations
 
+[Instructions for coding agents](AGENTS.md) ·
 [Agent Plugin and three official skills](AGENT_INTEGRATIONS.md) ·
 [Codex / Claude Code / Cursor / VS Code / Windsurf connections](connections/README.md) ·
 [MCP Registry and Smithery status](registry/README.md).
@@ -29,13 +30,20 @@ Native project files: [Claude MCP](.mcp.json),
 Review and approve connections in your client. Do not overwrite an existing
 configuration or enable the same server through both a plugin and a native file.
 
-Three official skills are already hosted here. List them without installation:
+| Official skill | Use it for |
+| --- | --- |
+| [Product discovery](skills/vesremont-product-discovery/SKILL.md) | Find and compare current products, prices and stock |
+| [Session shopping](skills/vesremont-session-shopping/SKILL.md) | Buyer-authorized cart and checkout assistance |
+| [Buyer guidance](skills/vesremont-buyer-guidance/SKILL.md) | Answers grounded in published store policies |
+
+List these skills without installation (Node **22.20.0+** for `skills@1.7.0`):
 
 ```sh
 npx skills@1.7.0 add oooafganec-dev/vesremont-sdk --list
 ```
 
 [Installation, provenance and directory status](AGENT_INTEGRATIONS.md).
+[Verified public URLs and audit evidence](PUBLIC_DISCOVERY.md).
 GitHub publication and CLI discovery are confirmed; skills.sh catalogue
 indexing is a separate external result, not implied by this command.
 

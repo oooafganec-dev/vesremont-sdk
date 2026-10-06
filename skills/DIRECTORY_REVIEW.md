@@ -6,16 +6,16 @@ claim that a catalogue listing exists. No request has been sent.
 ## Reproducible state
 
 The public repository https://github.com/oooafganec-dev/vesremont-sdk at
-`d396ba0ddbf8455ed932ecb8cf680d6edfd11be4` contains three distinct skills:
+`41ba23fded38428191301ea7ca94589c3eb59287` contains three distinct skills:
 
 - https://github.com/oooafganec-dev/vesremont-sdk/blob/main/skills/vesremont-product-discovery/SKILL.md
 - https://github.com/oooafganec-dev/vesremont-sdk/blob/main/skills/vesremont-session-shopping/SKILL.md
 - https://github.com/oooafganec-dev/vesremont-sdk/blob/main/skills/vesremont-buyer-guidance/SKILL.md
 
-The official CLI 1.7.0 lists all three and can install them from this remote
-repository. Windows Git converted checkout LF to CRLF; the installed content
-was unchanged. This follow-up's `.gitattributes` preserves exact SKILL.md bytes
-even with `core.autocrlf=true`; recheck the remote install after its publication.
+The official CLI 1.7.0 installed all three from this remote repository on
+2026-10-06 with Node 22.20.0. A fresh isolated Windows project installation
+preserved the exact canonical SHA-256 of every SKILL.md without normalization;
+the published `.gitattributes` resolves the earlier LF-to-CRLF conversion.
 Test installations use disabled telemetry and do not represent adoption.
 `sources.json` records hashes matching the byte-identical canonical
 artifacts at https://vesremont.com/.well-known/agent-skills/index.json.
@@ -33,7 +33,7 @@ the Vercel OIDC token described in its documentation.
 
 The [official FAQ](https://www.skills.sh/docs/faq) states that actual CLI
 installations drive listing and ranking. There is no documented standalone
-`publish` command for a GitHub skill. To use these skills, install them once
+`publish` command for a GitHub skill. With Node 22.20.0+, install them once
 in the real target project, review them, and use normal client consent:
 
 ```sh
