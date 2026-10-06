@@ -17,6 +17,17 @@ assert.deepEqual(portable.mcpServers, { vesremont: { type: 'streamable-http', ur
 assert.deepEqual((await json('connections/claude-code.mcp.json')).mcpServers, { vesremont: { type: 'http', url: endpoint } });
 assert.deepEqual((await json('connections/cursor.mcp.json')).mcpServers, { vesremont: { url: endpoint } });
 assert.deepEqual((await json('connections/vscode.mcp.json')).servers, { vesremont: { type: 'http', url: endpoint } });
+assert.deepEqual(await json('.mcp.json'), await json('connections/claude-code.mcp.json'));
+assert.deepEqual(await json('.cursor/mcp.json'), await json('connections/cursor.mcp.json'));
+assert.deepEqual(await json('connections/windsurf.mcp_config.json'), { mcpServers: { vesremont: { serverUrl: endpoint } } });
+const claudeRule = await readFile(new URL('.claude/rules/vesremont-sdk.md', root), 'utf8');
+assert.match(claudeRule, /^---\npaths:\n/);
+const windsurfRule = await readFile(new URL('.windsurf/rules/vesremont-sdk.md', root), 'utf8');
+assert.match(windsurfRule, /^---\ntrigger: model_decision\ndescription: .+\n---\n/);
+const readme = await readFile(new URL('README.md', root), 'utf8');
+for (const path of ['.mcp.json', '.cursor/mcp.json', '.claude/rules/vesremont-sdk.md', '.windsurf/rules/vesremont-sdk.md', 'connections/windsurf.mcp_config.json']) {
+  assert.ok(readme.includes(`](${path})`), `README discovery link: ${path}`);
+}
 const codex = await readFile(new URL('connections/codex.toml', root), 'utf8');
 assert.match(codex, /\[mcp_servers\.vesremont\]\r?\nurl = "https:\/\/vesremont\.com\/mcp"/);
 assert.doesNotMatch(codex, /(?:token|headers|approval_mode)\s*=/);
@@ -56,5 +67,11 @@ if (process.argv.includes('--public')) {
     assert.equal(digest(Buffer.from(await (await get(entry.url)).arrayBuffer())), entry.digest);
     console.log(`PASS public source ${entry.name}`);
   }
+  const record = await (await get(`https://registry.modelcontextprotocol.io/v0.1/servers/${encodeURIComponent(server.name)}/versions/${server.version}`)).json();
+  assert.deepEqual(record.server, server, 'Published Registry descriptor matches local descriptor semantically');
+  assert.equal(record._meta['io.modelcontextprotocol.registry/official'].status, 'active');
+  const search = await (await get('https://registry.modelcontextprotocol.io/v0.1/servers?search=vesremont&limit=100')).json();
+  assert.ok(search.servers.some(entry => entry.server.name === server.name && entry.server.version === server.version));
+  console.log(`PASS Registry active, descriptor and search ${server.name}@${server.version}`);
 }
 console.log('AGENT_INTEGRATIONS=PASS; no store tools called, no publication or client OAuth claimed');

@@ -1,12 +1,15 @@
 # SDK/CLI 0.2.0: publication status
 
 Agent integration follow-up (2026-10-06): portable plugin 0.1.0, three canonical
-skill snapshots and four client config examples are prepared and locally tested;
+skill snapshots and four client config examples are published on GitHub main
+at `d396ba0ddbf8455ed932ecb8cf680d6edfd11be4` and tested;
 see [AGENT_INTEGRATIONS.md](AGENT_INTEGRATIONS.md). This is not a re-release of
-any SDK. Official MCP Registry publication and skills.sh indexing remain separate
-unconfirmed steps; see [current registry evidence](registry/README.md).
+any SDK. Official MCP Registry `com.vesremont/store@1.0.0` is published and
+active; skills.sh catalogue indexing remains unconfirmed.
+See [current registry evidence](registry/README.md) and
+[configurations/skills follow-up](PUBLIC_DISCOVERY.md).
 
-Updated 2026-10-05. Public SDK-only source repository:
+Updated 2026-10-06. Public SDK-only source repository:
 https://github.com/oooafganec-dev/vesremont-sdk.
 The owner published all four SDK releases. The registry and public Go-proxy
 checks below were run on an external Windows computer, not the store server.
@@ -79,13 +82,14 @@ https://vesremont.com/developers/. The owner supplied a successful renewed
 Smithery report with 21 tools and 4 resources; parameter-description work is
 handled separately by the runtime owner. The upstream remains
 https://vesremont.com/mcp; buyer authorization is not bypassed.
-The site already links back from the developer portal; this delivery adds a
-direct visible homepage backlink. This does not claim a paid verified badge,
+The homepage and developer portal already link back. This does not claim a paid verified badge,
 non-zero registry usage or successful private buyer operations.
 Smithery is separate from the official MCP Registry; one listing does not
 prove publication in another directory or a successful buyer OAuth test.
 
-SDK publication and public MCP discovery are confirmed. The cached Ora scan
-at 2026-10-05 22:11 +03:00 still reports registry 0/1, CLI 2/3 and multi-language
-SDK 1/3. Do not claim those detector checks passed until a fresh scan confirms
-them. No automatic republishing or usage-generating tool calls are necessary.
+Official Registry publication was confirmed on 2026-10-06: active, latest,
+endpoint and website match, search for `vesremont` returns the record.
+The cached Ora scan at 2026-10-06T16:55:46Z is 95/100 and still reports
+registry 0/1 and skills.sh not listed. Publication, installation and external
+detector acceptance are separate outcomes. No automatic republishing or
+usage-generating tool calls are necessary.

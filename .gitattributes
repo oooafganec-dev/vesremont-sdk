@@ -1,0 +1,2 @@
+# Canonical skill hashes are calculated from LF bytes; preserve them on Windows.
+skills/**/SKILL.md text eol=lf

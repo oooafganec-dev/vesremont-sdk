@@ -14,12 +14,30 @@ Client libraries are MIT licensed; the store is not released under that license.
 ## Agent integrations
 
 [Agent Plugin and three official skills](AGENT_INTEGRATIONS.md) ·
-[Codex / Claude Code / Cursor / VS Code connections](connections/README.md) ·
+[Codex / Claude Code / Cursor / VS Code / Windsurf connections](connections/README.md) ·
 [MCP Registry and Smithery status](registry/README.md).
 
 The repository also packages Vesremont's published skills and one remote MCP
 connection. This does not alter the SDK packages, grant buyer consent or replace
 explicit order confirmation. See the integration guide for installation and checks.
+
+Native project files: [Claude MCP](.mcp.json),
+[Claude SDK rules](.claude/rules/vesremont-sdk.md),
+[Cursor MCP](.cursor/mcp.json),
+[Windsurf SDK rules](.windsurf/rules/vesremont-sdk.md) and
+[Cascade MCP example](connections/windsurf.mcp_config.json).
+Review and approve connections in your client. Do not overwrite an existing
+configuration or enable the same server through both a plugin and a native file.
+
+Three official skills are already hosted here. List them without installation:
+
+```sh
+npx skills@1.7.0 add oooafganec-dev/vesremont-sdk --list
+```
+
+[Installation, provenance and directory status](AGENT_INTEGRATIONS.md).
+GitHub publication and CLI discovery are confirmed; skills.sh catalogue
+indexing is a separate external result, not implied by this command.
 
 ## Clients
 
@@ -84,6 +102,7 @@ Remote MCP endpoint: `https://vesremont.com/mcp`. It is operated by Vesremont;
 this SDK repository is not the implementation of that MCP server.
 
 [Smithery listing](https://smithery.ai/servers/oooafganec/Vesremont).
+[Official MCP Registry: com.vesremont/store 1.0.0](https://registry.modelcontextprotocol.io/v0.1/servers/com.vesremont%2Fstore/versions/1.0.0).
 The public card links back to the developer portal, which links to that card.
 Successful public tool discovery does not grant access to a buyer's private data.
 Directory verification badges and Ora recognition are separate from publication.

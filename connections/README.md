@@ -12,6 +12,25 @@ client configuration. No SDK, API key or local MCP proxy is needed for public re
 | Claude Code | [claude-code.mcp.json](claude-code.mcp.json) | Project `.mcp.json`; approve this server in Claude Code |
 | Cursor | [cursor.mcp.json](cursor.mcp.json) | Project `.cursor/mcp.json` or the user's Cursor MCP settings |
 | VS Code | [vscode.mcp.json](vscode.mcp.json) | Project `.vscode/mcp.json`; use **MCP: List Servers** to start it |
+| Windsurf / legacy Cascade | [windsurf.mcp_config.json](windsurf.mcp_config.json) | User MCP config opened through Cascade **Open MCP config file**; merge this entry |
+
+The repository includes ready-to-read native project files:
+[Claude Code `.mcp.json`](../.mcp.json),
+[Cursor `.cursor/mcp.json`](../.cursor/mcp.json),
+[Claude SDK rules](../.claude/rules/vesremont-sdk.md) and
+[Windsurf SDK rules](../.windsurf/rules/vesremont-sdk.md).
+Rules guide SDK development; they are not extra MCP servers or replacement
+shopping policies. Claude's rule is file-scoped; Windsurf's is model-decision
+scoped, so unrelated tasks do not get an always-on shopping prompt.
+
+For Windsurf versions using `~/.codeium/windsurf/mcp_config.json`, merge the
+example there. The current official docs redirect to Devin Desktop and name
+`%APPDATA%/devin/mcp_config.json` on Windows or `~/.config/devin/mcp_config.json`
+on macOS/Linux for legacy Cascade. Use **Open MCP config file** in your actual
+version rather than assuming a path. `.windsurf/rules/` remains a supported
+fallback for Cascade rules; it is **not** an MCP configuration directory.
+The newer Devin Local agent has a different setup; this Cascade example does
+not claim to configure it.
 
 CLI alternatives (each adds client configuration; run only when you want that):
 
@@ -38,4 +57,7 @@ Official format references, checked 2026-10-06:
 [Claude Code](https://code.claude.com/docs/en/mcp),
 [Cursor](https://cursor.com/docs/mcp),
 [VS Code](https://code.visualstudio.com/docs/agent-customization/mcp-servers),
+[Cascade MCP](https://docs.windsurf.com/windsurf/cascade/mcp),
+[Cascade rules](https://docs.windsurf.com/windsurf/cascade/memories),
+[Claude rules](https://code.claude.com/docs/en/memory),
 [Agent Plugins](https://agent-plugins.org/specification).

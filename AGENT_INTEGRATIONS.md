@@ -25,7 +25,8 @@ read current prices, availability and canonical policy pages before answering.
 
 ## Install skills through the official CLI
 
-After these files are committed to the public repository, list available skills:
+The three skills are published in the public repository and the official CLI
+discovers all three. List them without installing:
 
 ```sh
 npx skills@1.7.0 add oooafganec-dev/vesremont-sdk --list
@@ -46,9 +47,14 @@ The directory uses real installation telemetry, not a separate publication
 command. A successful local install or a GitHub commit does not guarantee
 immediate skills.sh indexing. Do not manufacture installs. Tests use
 `DISABLE_TELEMETRY=1` and `DO_NOT_TRACK=1` and do not count as adoption.
-On 2026-10-06 the prospective skills.sh product-discovery URL returned a
-soft-404 page (HTTP 200 but "isn't available" and `noindex`); it is **not** a
-confirmed listing. Verify the page content, not only HTTP status, after publication.
+On 2026-10-06 all three prospective skills.sh detail URLs returned HTTP 200
+but an unavailable-skill page. They are **not** confirmed listings; the title
+alone contains the requested skill name even on that page. Remote GitHub
+discovery passed, with telemetry disabled for tests.
+See [public discovery evidence and catalogue blocker](PUBLIC_DISCOVERY.md).
+For genuine use, install once in your intended project; do not repeat installs
+or enable test telemetry merely to inflate adoption. A catalogue page and its
+official ownership classification must be checked separately afterward.
 
 Official references: [skills CLI](https://github.com/vercel-labs/skills),
 [skills.sh documentation](https://www.skills.sh/docs).
@@ -78,14 +84,22 @@ node test-agent-integrations.mjs --public
 ```
 
 The first command verifies configuration semantics, exact skill digests and the
-prepared Registry descriptor. The second performs only bounded GET requests to
-the public skills index and SKILL.md files; it fails if the live source differs.
+published Registry descriptor. The second performs only bounded GET requests to
+the public skills index, SKILL.md files and Registry; it fails if the source or
+active publication differs.
 It never calls a store tool or writes a cart/order. Official JSON Schema
 validation, YAML/TOML parsing and a real isolated skills CLI 1.7.0 installation
-were also run on 2026-10-06. The installed SKILL.md bytes matched their sources.
+were also run on 2026-10-06. The earlier local-copy installation preserved
+exact source bytes. The fresh remote Windows installation preserved the text
+but Git converted LF to CRLF. This follow-up's `.gitattributes` fixes that
+checkout behavior for SKILL.md; its controlled Git checkout test preserves
+exact hashes. Recheck the remote installation after publishing that file.
 
 Public GitHub baseline at inspection:
-`d644961a5ef3f106de3536ab20f09b4372215ebc` (main).
-Published Go tag `go/v0.2.0` is not moved. This package has no new public commit
-until its owner uploads/commits it; confirm that commit before announcing remote
-installation or Ora acceptance. See [registry evidence and owner steps](registry/README.md).
+`d396ba0ddbf8455ed932ecb8cf680d6edfd11be4` (main, 2026-10-06T16:21:43Z).
+That commit already publishes the plugin, three skills and four config examples.
+The follow-up adds [native client paths and Cascade configuration](connections/README.md)
+and corrects stale publication instructions. Its upload is a separate step:
+verify the new public commit and file bytes before claiming these additions
+are discoverable. Published Go tag `go/v0.2.0` is not moved.
+The official Registry is active; see [registry evidence](registry/README.md).
