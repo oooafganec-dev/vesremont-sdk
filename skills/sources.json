@@ -1,0 +1,21 @@
+{
+  "index": "https://vesremont.com/.well-known/agent-skills/index.json",
+  "checkedAt": "2026-10-06",
+  "skills": [
+    {
+      "name": "vesremont-product-discovery",
+      "url": "https://vesremont.com/.well-known/agent-skills/vesremont-product-discovery/SKILL.md",
+      "digest": "sha256:089767c5881062dd16938a242b957c39ce10e620f2b88019b26407de1e4d3903"
+    },
+    {
+      "name": "vesremont-session-shopping",
+      "url": "https://vesremont.com/.well-known/agent-skills/vesremont-session-shopping/SKILL.md",
+      "digest": "sha256:1c97eb45358665f3d3e8d0dd8caa6e399b0bb44850fc5855aa6e75549ed31ff6"
+    },
+    {
+      "name": "vesremont-buyer-guidance",
+      "url": "https://vesremont.com/.well-known/agent-skills/vesremont-buyer-guidance/SKILL.md",
+      "digest": "sha256:ee56a073dab9a14ce4462563ec1d3ef929dcad5c5bff48a52850a5fbc2795cb8"
+    }
+  ]
+}

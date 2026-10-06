@@ -1,0 +1,4 @@
+# Merge this table into your Codex config.toml; do not replace existing settings.
+# Public catalog reads do not need a buyer token. Keep tool approval prompts.
+[mcp_servers.vesremont]
+url = "https://vesremont.com/mcp"

@@ -11,6 +11,16 @@ This repository contains client code only. It does not include the store,
 Bitrix, server configuration, customer data, keys or an alternative API server.
 Client libraries are MIT licensed; the store is not released under that license.
 
+## Agent integrations
+
+[Agent Plugin and three official skills](AGENT_INTEGRATIONS.md) ·
+[Codex / Claude Code / Cursor / VS Code connections](connections/README.md) ·
+[MCP Registry and Smithery status](registry/README.md).
+
+The repository also packages Vesremont's published skills and one remote MCP
+connection. This does not alter the SDK packages, grant buyer consent or replace
+explicit order confirmation. See the integration guide for installation and checks.
+
 ## Clients
 
 | Language | Directory | Package/module |

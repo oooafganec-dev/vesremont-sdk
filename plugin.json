@@ -1,0 +1,11 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "vesremont",
+  "version": "0.1.0",
+  "description": "Find Vesremont products, check current price and stock, read store policies and assist shopping with buyer consent and separate order confirmation.",
+  "author": { "name": "Vesremont", "url": "https://vesremont.com/" },
+  "homepage": "https://vesremont.com/developers/",
+  "repository": "https://github.com/oooafganec-dev/vesremont-sdk",
+  "license": "MIT",
+  "keywords": ["vesremont", "shopping", "catalog", "mcp", "agent-skills"]
+}

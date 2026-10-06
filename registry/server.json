@@ -1,0 +1,11 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.vesremont/store",
+  "title": "Vesremont",
+  "websiteUrl": "https://vesremont.com/developers/",
+  "description": "Vesremont catalog, product search and buyer-authorized shopping operations.",
+  "version": "1.0.0",
+  "remotes": [
+    { "type": "streamable-http", "url": "https://vesremont.com/mcp" }
+  ]
+}

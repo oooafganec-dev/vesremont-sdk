@@ -1,5 +1,11 @@
 # SDK/CLI 0.2.0: publication status
 
+Agent integration follow-up (2026-10-06): portable plugin 0.1.0, three canonical
+skill snapshots and four client config examples are prepared and locally tested;
+see [AGENT_INTEGRATIONS.md](AGENT_INTEGRATIONS.md). This is not a re-release of
+any SDK. Official MCP Registry publication and skills.sh indexing remain separate
+unconfirmed steps; see [current registry evidence](registry/README.md).
+
 Updated 2026-10-05. Public SDK-only source repository:
 https://github.com/oooafganec-dev/vesremont-sdk.
 The owner published all four SDK releases. The registry and public Go-proxy

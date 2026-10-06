@@ -1,0 +1,8 @@
+{
+  "servers": {
+    "vesremont": {
+      "type": "http",
+      "url": "https://vesremont.com/mcp"
+    }
+  }
+}
